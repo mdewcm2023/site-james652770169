@@ -1,8 +1,45 @@
 <h1>w13</h1>
 <p><a>https://stud2.cycu.org:8022 </a><br/><br/></p>
 <p>w13</p>
+<p>在 stud2 主機建立倉儲的動態系統:</p>
+<p>ssh<span> </span><a href="mailto:demo2@stud2.cycu.org">demo2@stud2.cycu.org</a> 登入後, 以 ssh-keygen 在 .ssh 目錄下建立 id_rsa,<span> </span><span>id_rsa.pub</span></p>
+<p>.ssh/config:</p>
+<div>
+<div class="syntaxhighlighter js" id="highlighter_927325">
+<table border="0" cellpadding="0" cellspacing="0">
+<tbody>
+<tr>
+<td class="gutter">
+<div class="line number1 index0 alt2">1</div>
+<div class="line number2 index1 alt1">2</div>
+<div class="line number3 index2 alt2">3</div>
+<div class="line number4 index3 alt1">4</div>
+</td>
+<td class="code">
+<div class="container">
+<div class="line number1 index0 alt2"><code class="js plain">Host github.com</code></div>
+<div class="line number2 index1 alt1"><code class="js plain">User git</code></div>
+<div class="line number3 index2 alt2"><code class="js plain">Hostname github.com</code></div>
+<div class="line number4 index3 alt1"><code class="js plain">ProxyCommand /usr/bin/ncat --proxy p4.cycu.org:3128 --proxy-type http %h %p</code></div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<p>sftp<span> </span><a href="mailto:demo2@stud2.cycu.org">demo2@stud2.cycu.org</a> 登入後, cd .ssh 然後以 put<span> </span><span>config</span><span> </span>將代理主機的設定檔案送到 stud2 帳號下的 .ssh 目錄, 使用 get id_rsa.pub 將公鑰取下, 然後以 SciTE 編輯器打開後, 將公鑰內容送到 Github 帳號下的 settings 中的 SSH and GPG 設定區.</p>
+<p>完成上述設定後, 以 SSH 協定取下倉儲:</p>
+<p>ssh 登入帳號後, 在所在目錄 /home/帳號/, 以 git clone<span> </span><a href="mailto:git@github.com:wcm2023">git@github.com:wcm2023</a>/倉儲名稱.git repo</p>
+<p>cd repo</p>
+<p>利用以下指令, 將 acp 設為 user 可以執行 (Execute):</p>
+<p>chmod u+x acp</p>
+<p>以 sftp get 取下 repo 目錄下的 waitress_server.py</p>
+<p>在 Windows 編輯 waitress_server.py, 之後存為 server.py, 再送回 repo 目錄下.</p>
+<p>編輯過程在填入個人帳號所配發的 9 字頭的埠號.</p>
+<p>ssh 遠端登入到 repo 目錄下, 執行 hupper3 -m server.py 測試是否已經以<span> </span><a href="https://stud2.cycu.org/">https://stud2.cycu.org:</a>8字頭的埠號.<span> </span></p>
 <p></p>
-<p></p><h1>W12</h1>
+<h1>W12</h1>
 <p><br/>W12<img alt="" height="340" src="/images/螢幕擷取畫面 2023-05-08 162826.png" width="604"/></p>
 <p><strong></strong>網站:<a href="https://stud2.cycu.org/~wcm41023309/site/content/index.html">https://stud2.cycu.org/~wcm41023309/site/content/index.html</a></p>
 <p></p>
@@ -228,7 +265,7 @@ brython_div &lt;= data</pre>
 <p>將上述程式, 在本頁面導入 Brython 環境後, 可以直接執行, 並且將結果以 Brython browser 的 html 模組列在頁面中:</p>
 <p></p>
 <p></p>
-<div id="brython_div">40723224:57<br/>40823116:81<br/>40823128:0<br/>40823139:17<br/>40823152:74<br/>40823153:92<br/>40823218:45<br/>40823246:42<br/>40828213:44<br/>40828236:0<br/>40828237:0<br/>40828242:0<br/>40828244:0<br/>40840167:0<br/>40871106:0<br/>41023301:67<br/>41023302:38<br/>41023305:43<br/>41023306:66<br/>41023307:85<br/>41023308:50<br/>41023309:69<br/>41023310:32<br/>41023311:80<br/>41023312:72<br/>41023314:52<br/>41023315:83<br/>41023316:76<br/>41023317:76<br>41023318:0<br/>41123101:82<br/>41123102:75<br/>41123103:0<br/>41123107:62<br/>41123112:0<br/>41123116:58<br/>41123118:48<br/>41123120:0<br/>41123121:55<br/>41123122:89<br/>41123124:67<br/>41123125:0<br/>41123129:78<br/>41123131:72<br/>41123132:66<br/>41123133:54<br/>41123134:38<br/>41123135:88<br/>41123136:32<br/>41123137:76<br/>41123139:88<br/>41123140:68<br/>41123141:50<br/>41123142:68<br/>41123143:59<br/>41123144:75<br/>41123145:42<br/>41123146:0<br/>41123148:66<br/>41123149:88<br/>41123150:69<br/>41123152:0</br></div>
+<div id="brython_div">40723224:57<br/>40823116:81<br/>40823128:0<br/>40823139:17<br/>40823152:74<br/>40823153:92<br/>40823218:45<br/>40823246:42<br/>40828213:44<br/>40828236:0<br/>40828237:0<br/>40828242:0<br/>40828244:0<br/>40840167:0<br/>40871106:0<br/>41023301:67<br/>41023302:38<br/>41023305:43<br/>41023306:66<br/>41023307:85<br/>41023308:50<br/>41023309:69<br/>41023310:32<br/>41023311:80<br/>41023312:72<br/>41023314:52<br/>41023315:83<br/>41023316:76<br/>41023317:76<br/>41023318:0<br/>41123101:82<br/>41123102:75<br/>41123103:0<br/>41123107:62<br/>41123112:0<br/>41123116:58<br/>41123118:48<br/>41123120:0<br/>41123121:55<br/>41123122:89<br/>41123124:67<br/>41123125:0<br/>41123129:78<br/>41123131:72<br/>41123132:66<br/>41123133:54<br/>41123134:38<br/>41123135:88<br/>41123136:32<br/>41123137:76<br/>41123139:88<br/>41123140:68<br/>41123141:50<br/>41123142:68<br/>41123143:59<br/>41123144:75<br/>41123145:42<br/>41123146:0<br/>41123148:66<br/>41123149:88<br/>41123150:69<br/>41123152:0</div>
 <p></p>
 <h1>網站結構</h1>
 <div>
